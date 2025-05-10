@@ -101,3 +101,43 @@ class Pedido:
     def registrar_avaliacao(self, nota: int, comentario: str):
         self.avaliacao_cliente = nota
         self.comentario = comentario
+        
+
+class Produto:
+    def __init__(self, nomeProduto: str, peso: float, dimensoes: str, fragil: bool):
+        self.nomeProduto = nomeProduto
+        self.peso = peso
+        self.dimensoes = dimensoes
+        self.fragil = fragil
+        
+    @property
+    def nomeProduto(self):
+        return self._nomeProduto
+
+    @nomeProduto.setter
+    def nomeProduto(self, nomeProduto):
+        self._nomeProduto = nomeProduto
+        
+    @property
+    def peso(self):
+        return self._peso
+    @peso.setter
+    def peso(self, peso):
+        if peso > 0:
+            self._peso = peso
+        else:
+            raise ValueError("O peso deve ser maior que zero.")
+    
+    @property
+    def dimensoes(self):
+        return self._dimensoes
+    @dimensoes.setter
+    def dimensoes(self, dimensoes):
+        self._dimensoes = dimensoes
+        
+    @property
+    def fragil(self):
+        return self._fragil
+    @fragil.setter
+    def fragil(self, fragil):
+        self._fragil = fragil
